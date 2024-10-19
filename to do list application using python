@@ -1,0 +1,46 @@
+# To do list application
+def application():
+    print("Whats your task for today:")
+    x=int(input("Enter no of tasks you want to add:"))
+    for i in range(1,x+1):
+        y=input(f"Enter your {i} task:"  )
+        lst.append(y)
+    print(f"Your daily Task are {lst} ")
+    while True:
+        print("Press 1->add new task:")
+        print("Press 2->update task:")
+        print("Press 3->view your list:")
+        print("Press 4->delete your task:")
+        print("Press 5->exit from the app:")
+        ch=int(input("Enter your choie:"))
+        if(ch==1):
+            addition()
+        elif(ch==2):
+            updatation()
+        elif(ch==3):
+            viewing()
+        elif(ch==4):
+            deleting()
+        elif(ch==5):
+            break 
+def addition():
+    x=input("Enter your new task: ")
+    lst.append(x)
+    print("---------Task added succesfully----------")
+def updatation():
+    x=input("Enter your task that you want to update: ")
+    if x  in lst:
+        idx=lst.index(x)
+        up=input("Enter new task:")
+        lst[idx]=up
+        print("---------Task updated succesfully----------")
+    else:
+        print("<<<<<<The task that you are trying to access is not in list>>>>") 
+def viewing():
+      print(f"Now Your daily Task are {lst} ")  
+def deleting():
+    x=input("Enter task that you want to delete:")
+    lst.remove(x)
+    print("---------Task deleted succesfully----------") 
+lst=[] # empty list
+application()# calling main function of program
